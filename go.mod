@@ -1,4 +1,4 @@
-module github.com/paketo-buildpacks/ca-certificates/v3
+module github.com/initializ-buildpacks/ca-certificates/v3
 
 go 1.20
 

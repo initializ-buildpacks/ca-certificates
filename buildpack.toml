@@ -16,8 +16,8 @@ api = "0.7"
 
 [buildpack]
   description = "A Cloud Native Buildpack that adds custom CA certificates to a build and a created image"
-  homepage = "https://github.com/paketo-buildpacks/ca-certificates"
-  id = "paketo-buildpacks/ca-certificates"
+  homepage = "https://github.com/initializ-buildpacks/ca-certificates"
+  id = "initializ-buildpacks/ca-certificates"
   keywords = ["ca-certificates", "trust", "certificates"]
   name = "Paketo Buildpack for CA Certificates"
   version = "{{.version}}"
@@ -25,7 +25,7 @@ api = "0.7"
 
   [[buildpack.licenses]]
     type = "Apache-2.0"
-    uri = "https://github.com/paketo-buildpacks/ca-certificates/blob/main/LICENSE"
+    uri = "https://github.com/initializ-buildpacks/ca-certificates/blob/main/LICENSE"
 
 [metadata]
   include-files = ["LICENSE", "NOTICE", "README.md", "bin/build", "bin/detect", "bin/helper", "bin/main", "buildpack.toml"]
