@@ -19,7 +19,7 @@ api = "0.7"
   homepage = "https://github.com/initializ-buildpacks/ca-certificates"
   id = "initializ-buildpacks/ca-certificates"
   keywords = ["ca-certificates", "trust", "certificates"]
-  name = "Paketo Buildpack for CA Certificates"
+  name = "Initializ Buildpack for CA Certificates"
   version = "{{.version}}"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
 
