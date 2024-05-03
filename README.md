@@ -1,6 +1,6 @@
-# `gcr.io/paketo-buildpacks/ca-certificates`
 
-The Paketo Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
+
+The Initializ Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
 
 ## Behavior
 
