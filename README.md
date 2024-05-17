@@ -1,4 +1,4 @@
-# `docker.io/initializ-buildpacks/ca-certificates`
+# `https://hub.docker.com/r/ca-certificates`
 
 The Initializ Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
 
