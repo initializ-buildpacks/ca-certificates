@@ -195,7 +195,7 @@ jobs:
                     --format "${FORMAT}"
                 fi
               env:
-                PACKAGES: docker.io/initializbuildpacks/environment-variables
+                PACKAGES: docker.io/initializbuildpacks/ca-certificates
                 PUBLISH: "true"
                 VERSION: ${{ steps.version.outputs.version }}
                 VERSION_MAJOR: ${{ steps.version.outputs.version-major }}
@@ -225,7 +225,7 @@ jobs:
             - if: ${{ true }}
               uses: docker://ghcr.io/buildpacks/actions/registry/request-add-entry:5.5.3
               with:
-                address: docker.io/initializbuildpacks/environment-variables@${{ steps.package.outputs.digest }}
-                id: initializ-buildpacks/environment-variables
+                address: docker.io/initializbuildpacks/ca-certificates@${{ steps.package.outputs.digest }}
+                id: initializ-buildpacks/ca-certificates
                 token: ${{ secrets.PAT }}
                 version: ${{ steps.version.outputs.version }}
