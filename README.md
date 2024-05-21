@@ -33,7 +33,7 @@ To learn about the conventional meaning of `SSL_CERT_DIR` and `SSL_CERT_FILE` en
 
 
 
-## Bindings
+## Bindings.
 
 The buildpack optionally accepts the following bindings:
 
