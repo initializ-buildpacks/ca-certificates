@@ -1,6 +1,6 @@
-# `ca-certificates`
+# `gcr.io/initializ-buildpacks/ca-certificates`
 
-The Initializ Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
+The Paketo Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
 
 ## Behavior
 
@@ -33,7 +33,7 @@ To learn about the conventional meaning of `SSL_CERT_DIR` and `SSL_CERT_FILE` en
 
 
 
-## Bindings.
+## Bindings
 
 The buildpack optionally accepts the following bindings:
 

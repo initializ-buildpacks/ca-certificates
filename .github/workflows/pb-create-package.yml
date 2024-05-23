@@ -9,6 +9,13 @@ jobs:
         runs-on:
             - ubuntu-latest
         steps:
+            - name: Docker login gcr.io
+              if: ${{ (github.event_name != 'pull_request' || ! github.event.pull_request.head.repo.fork) && (github.actor != 'dependabot[bot]') }}
+              uses: docker/login-action@v2
+              with:
+                password: ${{ secrets.GCR_PUSH_BOT_JSON_KEY }}
+                registry: gcr.io
+                username: _json_key
             - name: Docker login docker.io
               if: ${{ (github.event_name != 'pull_request' || ! github.event.pull_request.head.repo.fork) && (github.actor != 'dependabot[bot]') }}
               uses: docker/login-action@v2
@@ -223,7 +230,7 @@ jobs:
                 DIGEST: ${{ steps.package.outputs.digest }}
                 GITHUB_TOKEN: ${{ secrets.PAT }}
             - if: ${{ true }}
-              uses: docker://ghcr.io/buildpacks/actions/registry/request-add-entry:5.5.3
+              uses: docker://ghcr.io/buildpacks/actions/registry/request-add-entry:4.0.1
               with:
                 address: docker.io/initializbuildpacks/ca-certificates@${{ steps.package.outputs.digest }}
                 id: initializ-buildpacks/ca-certificates
