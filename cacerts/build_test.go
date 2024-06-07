@@ -27,7 +27,7 @@ import (
 	"github.com/paketo-buildpacks/libpak"
 	"github.com/sclevine/spec"
 
-	"github.com/initializ-buildpacks/ca-certificates/v3/cacerts"
+	"github.com/paketo-buildpacks/ca-certificates/v3/cacerts"
 )
 
 func testBuild(t *testing.T, context spec.G, it spec.S) {
