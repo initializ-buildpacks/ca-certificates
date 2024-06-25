@@ -49,7 +49,7 @@ jobs:
                 mkdir -p "${HOME}"/bin
                 echo "${HOME}/bin" >> "${GITHUB_PATH}"
 
-                curl -L "https://ent.box.com/shared/static/j4d1bfe9uk1sb0i7zjvci0md9xmy41u4" -o ${HOME}/bin/pack
+                 curl -L "https://github.com/buildpacks/pack/releases/download/v0.34.2/pack-v0.34.2-linux.tgz" | tar xvz -C "${HOME}/bin"
                 chmod +x "${HOME}"/bin/pack
             - name: Enable pack Experimental
               if: ${{ false }}
