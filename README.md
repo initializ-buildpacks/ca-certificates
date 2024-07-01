@@ -14,7 +14,7 @@ The buildpack will do the following:
   * If another buildpack provides an entry of `type` `ca-certificates` in the build plan with `metadata.paths` containing an array of certificate paths, it adds all CA certificates from the given paths to the system truststore.
   * If `$BP_EMBED_CERTS` is true, it includes the layer with all of the CA certificates into the application image.
 * At runtime:
-  * If one or more bindings with `type` of `ca-certificates` exists, the `ca-cert-helper` adds all CA certificates from the bindings to the system truststore.
+  * If one or more bindings with `type` of `ca-certificates` exists, the `ca-cert-helper` adds all CA certificates from the bindings to the system truststore
 
 The buildpack configures trusted certs at both build and runtime by:
  1. Creating a directory.
