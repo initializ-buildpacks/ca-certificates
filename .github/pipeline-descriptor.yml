@@ -10,7 +10,7 @@ helpers:
   "bin/helper": "$GOMOD/cmd/helper"
 
 package:
-  repositories:   ["docker.io/paketobuildpacks/ca-certificates","gcr.io/paketo-buildpacks/ca-certificates"]
+  repositories:   ["docker.io/paketobuildpacks/ca-certificates","gcr.io/initializ-buildpacks/ca-certificates"]
   register:       true
   registry_token: ${{ secrets.PAKETO_BOT_GITHUB_TOKEN }}
 
