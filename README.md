@@ -1,6 +1,6 @@
 # `gcr.io/initializ-buildpacks/ca-certificates`
 
-The Initializ Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
+The Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certificates to the system truststore at build and runtime.
 
 ## Behavior
 
