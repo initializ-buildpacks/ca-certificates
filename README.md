@@ -4,7 +4,7 @@ The Buildpack for CA Certificates is a Cloud Native Buildpack that adds CA certi
 
 ## Behavior
 
-This buildpack always participates.
+This buildpack always participates
 
 The buildpack will do the following:
 
