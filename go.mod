@@ -1,6 +1,6 @@
 module github.com/initializ-buildpacks/ca-certificates/v3
 
-go 1.22
+go 1.22.5
 
 require (
 	github.com/buildpacks/libcnb v1.30.3
