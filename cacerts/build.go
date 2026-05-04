@@ -19,7 +19,7 @@ package cacerts
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"os"
 	"sort"
 	"strings"
 
@@ -48,7 +48,10 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 		return libcnb.BuildResult{}, fmt.Errorf("unable to create configuration resolver\n%w", err)
 	}
 
-	certDir, err := ioutil.TempDir("", "ca-certificates")
+	certDir, err := os.MkdirTemp("", "ca-certificates")
+	if err != nil {
+		return libcnb.BuildResult{}, fmt.Errorf("unable to create temp directory\n%w", err)
+	}
 
 	var certPaths []string
 	var contributedHelper bool
@@ -70,15 +73,12 @@ func (b Build) Build(context libcnb.BuildContext) (libcnb.BuildResult, error) {
 			if contributedHelper {
 				continue
 			}
-			h, be := libpak.NewHelperLayer(
+			h := libpak.NewHelperLayerContributor(
 				context.Buildpack,
 				ExecutableCACertsHelper,
 			)
 			h.Logger = b.Logger
 			result.Layers = append(result.Layers, h)
-			if be.Name != "" {
-				result.BOM.Entries = append(result.BOM.Entries, be)
-			}
 			contributedHelper = true
 		default:
 			return libcnb.BuildResult{}, fmt.Errorf("received unexpected buildpack plan entry %q", e.Name)

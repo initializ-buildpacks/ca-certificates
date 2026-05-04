@@ -18,7 +18,6 @@ package cacerts
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -58,7 +57,7 @@ func (e *ExecD) Execute() (map[string]string, error) {
 	if len(paths) == 0 {
 		return env, nil
 	}
-	certDir, err := ioutil.TempDir("", "ca-certificates")
+	certDir, err := os.MkdirTemp("", "ca-certificates")
 	if err != nil {
 		return nil, fmt.Errorf("failed to create temp dir\n%w", err)
 	}

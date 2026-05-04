@@ -17,7 +17,6 @@
 package cacerts_test
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
@@ -48,10 +47,10 @@ func testTrustedCACerts(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		var err error
 
-		certsDir, err = ioutil.TempDir("", "ca-cert-files")
+		certsDir, err = os.MkdirTemp("", "ca-cert-files")
 		Expect(err).NotTo(HaveOccurred())
 
-		layerDir, err = ioutil.TempDir("", "ca-certs-layer")
+		layerDir, err = os.MkdirTemp("", "ca-certs-layer")
 		Expect(err).NotTo(HaveOccurred())
 
 		layers := &libcnb.Layers{Path: layerDir}
@@ -73,7 +72,7 @@ func testTrustedCACerts(t *testing.T, context spec.G, it spec.S) {
 
 		for _, caCert := range caCertsList {
 			Expect(os.MkdirAll(filepath.Dir(caCert), 0755)).ToNot(HaveOccurred())
-			Expect(ioutil.WriteFile(caCert, []byte{}, 0644)).ToNot(HaveOccurred())
+			Expect(os.WriteFile(caCert, []byte{}, 0644)).ToNot(HaveOccurred())
 		}
 
 		trustedCAs = cacerts.NewTrustedCACerts(caCertsList, false)
